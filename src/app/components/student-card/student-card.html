@@ -1,0 +1,64 @@
+
+<!--
+FILE: student-card.html
+WHAT: Displays the student's photo, name, faculty,
+      class year, quote and navigation link.
+WHY: Creates a reusable structure for every student.
+-->
+
+<a
+  class="card"
+  [routerLink]="['/students', student().id]"
+  [attr.aria-label]="'Read the story of ' + student().name"
+>
+
+  <!-- Student portrait -->
+ 
+<img
+  class="card__photo"
+  [src]="photoSrc()"
+  [alt]="'Portrait of ' + student().name"
+  loading="lazy"
+  (error)="onImageError()"
+>
+
+
+  <!-- Card information -->
+  <div class="card__body">
+
+    <!-- Student name and arrow -->
+    <div class="card__heading">
+
+      <h3 class="card__name">
+        {{ student().name }}
+      </h3>
+
+      <!-- Arrow icon -->
+      <svg
+        class="card__arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M7 17 17 7M8 7h9v9" />
+      </svg>
+
+    </div>
+
+    <!-- Faculty and class year -->
+    <p class="card__meta">
+      {{ student().faculty }} · Class of {{ student().classYear }}
+    </p>
+
+    <!-- Student quote -->
+    <p class="card__quote">
+      “{{ student().quote }}”
+    </p>
+
+  </div>
+
+</a>

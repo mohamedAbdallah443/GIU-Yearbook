@@ -1,0 +1,11 @@
+ angular.json                                       |  3 [32m+[m[31m-[m
+ package-lock.json                                  | 42 [32m++++++[m[31m-------[m
+ src/app/app.routes.server.ts                       | 12 [32m+++[m[31m-[m
+ src/app/components/student-card/student-card.css   | 72 [32m++++++++++++++++++++++[m
+ src/app/components/student-card/student-card.html  | 64 [32m+++++++++++++++++++[m
+ .../components/student-card/student-card.spec.ts   | 21 [32m+++++++[m
+ src/app/components/student-card/student-card.ts    | 37 [32m+++++++++++[m
+ src/app/models/staff.model.ts                      | 17 [32m+++++[m
+ src/app/pages/students-page/students-page.html     |  4 [32m+[m[31m-[m
+ src/app/pages/students-page/students-page.ts       |  2 [32m+[m
+ 10 files changed, 244 insertions(+), 30 deletions(-)
