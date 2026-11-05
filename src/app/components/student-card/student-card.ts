@@ -5,6 +5,9 @@ WHAT: Defines the reusable Student Card component.
 WHY: Receives student data and handles missing images.
 */
 
+import { inject } from '@angular/core';
+import { SavedService } from '../../services/saved.service';
+
 import { Component, computed, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Student } from '../../models/student.model';
@@ -34,4 +37,14 @@ export class StudentCard {
   protected onImageError(): void {
     this.imageFailed.set(true);
   }
+  
+readonly savedService = inject(SavedService);
+
+toggleSaved(event: MouseEvent): void {
+  event.preventDefault();
+  event.stopPropagation();
+
+  this.savedService.toggle(this.student().id);
+}
+
 }
